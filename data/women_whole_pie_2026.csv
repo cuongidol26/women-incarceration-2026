@@ -1,0 +1,59 @@
+id,parent,label,short,value,display,note
+all,,All women and girls locked up,All,,199000,"Women and girls locked up on any given day in the United States."
+jails,all,Local jails,Local Jails,,87000,"More women are held in local jails than in state prisons."
+jails_nc,jails,Not convicted (local jails),Not Convicted,,52700,"Held before trial, often because they cannot afford bail."
+jails_nc_violent,jails_nc,Violent offense (not convicted),Violent,11700,,
+jails_nc_property,jails_nc,Property offense (not convicted),Property,16700,,
+jails_nc_drug,jails_nc,Drug offense (not convicted),Drug,15700,,
+jails_nc_public,jails_nc,Public order offense (not convicted),Public order,8200,,
+jails_nc_other,jails_nc,Other offense (not convicted),Other,300,,
+jails_c,jails,Convicted (local jails),Convicted,,34100,"Serving a jail sentence, awaiting sentencing or awaiting transfer."
+jails_c_violent,jails_c,Violent offense (convicted),Violent,4800,,
+jails_c_property,jails_c,Property offense (convicted),Property,11100,,
+jails_c_drug,jails_c,Drug offense (convicted),Drug,9400,,
+jails_c_public,jails_c,Public order offense (convicted),Public order,8600,,
+jails_c_other,jails_c,Other offense (convicted),Other,200,,
+youth,all,Youth confinement,Youth,,4300,"Girls confined by the juvenile legal system."
+youth_status,youth,Status offense,Status,300,,"Behaviour that is only an offense for minors, such as running away or truancy."
+youth_tech,youth,Technical violation,Technical violations,700,,"Non-criminal violation of probation rules."
+youth_drug,youth,Drug offense (youth),Drug,180,,
+youth_person,youth,Person offense (youth),Person,1900,,
+youth_property,youth,Property offense (youth),Property,800,,
+youth_public,youth,Public order offense (youth),Public order,400,,
+indian,all,Indian country jails,Indian Country Jails,600,,"Jails run by tribal authorities or the Bureau of Indian Affairs."
+commit,all,Involuntary commitment,Involuntary Commitment,2900,,"Held in psychiatric hospitals or civil commitment centres because of criminal charges or convictions."
+territorial,all,Territorial prisons,Territorial Prisons,300,,"Prisons in U.S. territories such as Puerto Rico and Guam."
+military,all,Military prisons,Military,20,,
+immig,all,Immigration detention,Immigration,,8300,
+immig_ice,immig,Detained by ICE,ICE,7700,,"Civil detention while facing deportation, not for a crime."
+immig_orr,immig,ORR (unaccompanied children),ORR (Unaccompanied|children),600,,"Unaccompanied migrant girls held by the Office of Refugee Resettlement."
+federal,all,Federal prisons and jails,Federal Prisons|& Jails,,15000,
+fed_usms,federal,U.S. Marshals,U.S. Marshals,4500,,"Held for federal courts, mostly before trial."
+fed_bop,federal,Bureau of Prisons,Bureau|of Prisons,,10600,
+fed_bop_violent,fed_bop,Violent offense (federal),Violent,500,,
+fed_bop_property,fed_bop,Property offense (federal),Property,800,,
+fed_bop_drug,fed_bop,Drug offense (federal),Drug,6700,,
+fed_bop_public,fed_bop,Public order offense (federal),Public order,2500,,
+fed_bop_other,fed_bop,Other offense (federal),Other,30,,
+state,all,State prisons,State Prisons,,81000,
+state_violent,state,Violent offenses (state prisons),Violent,,35900,
+state_murder,state_violent,Murder,Murder,11400,,
+state_manslaughter,state_violent,Manslaughter,Manslaughter,3100,,
+state_rape,state_violent,Rape/sexual assault,Rape/sexual assault,2500,,
+state_robbery,state_violent,Robbery,Robbery,5400,,
+state_assault,state_violent,Assault,Assault,9600,,
+state_otherviolent,state_violent,Other violent offense,Other|violent,4000,,
+state_drug,state,Drug offenses (state prisons),Drug,,20600,
+state_possession,state_drug,Drug possession,Drug|possession,7200,,
+state_otherdrug,state_drug,Other drug offense,Other drug,13400,,
+state_property,state,Property offenses (state prisons),Property,,14600,
+state_burglary,state_property,Burglary,Burglary,4600,,
+state_theft,state_property,Theft,Theft,4100,,
+state_cartheft,state_property,Car theft,Car theft,900,,
+state_fraud,state_property,Fraud,Fraud,3200,,
+state_otherproperty,state_property,Other property offense,Other property,1700,,
+state_public,state,Public order offenses (state prisons),Public|Order,,8700,
+state_weapons,state_public,Weapons,Weapons,1400,,
+state_dui,state_public,DUI,DUI,2000,,
+state_otherpublic,state_public,Other public order offense,Other|public order,5400,,
+state_other,state,Other offense (state prisons),Other,800,,
