@@ -1,0 +1,230 @@
+/* ---------- Theme tokens (contrast checked with check_contrast.py) ---------- */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-centre: #4a4a4a;
+  --bg-mid: #3a3a3a;
+  --bg-edge: #2a2a2a;
+  --text: #ffffff;
+  --text-soft: #ededed;
+  --text-muted: #cfcfcf;
+  --rule: rgba(255, 255, 255, 0.75);
+  --leader: #a8a8a8;
+  --bracket: #c4c4c4;
+  --focus: #ffd54a;
+  --tip-bg: #ffffff;
+  --tip-text: #161616;
+  --tip-muted: #404040;
+  --switch-border: #9a9a9a;
+  --switch-on-bg: #ffffff;
+  --switch-on-text: #161616;
+  --title-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg-centre: #ffffff;
+  --bg-mid: #f4f5f7;
+  --bg-edge: #e7e9ec;
+  --text: #161616;
+  --text-soft: #262626;
+  --text-muted: #474747;
+  --rule: rgba(0, 0, 0, 0.7);
+  --leader: #6b6b6b;
+  --bracket: #5a5a5a;
+  --focus: #1a56db;
+  --tip-bg: #1c1c1c;
+  --tip-text: #ffffff;
+  --tip-muted: #d4d4d4;
+  --switch-border: #767676;
+  --switch-on-bg: #161616;
+  --switch-on-text: #ffffff;
+  --title-shadow: none;
+}
+
+:root {
+  --sans: "Gill Sans", "Gill Sans MT", "Lato", Calibri, "Trebuchet MS", sans-serif;
+  --serif: "Times New Roman", Times, Georgia, serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+
+html { min-height: 100%; background: var(--bg-edge); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: var(--sans);
+  background: radial-gradient(ellipse at 40% 50%, var(--bg-centre) 0%, var(--bg-mid) 45%, var(--bg-edge) 100%) fixed;
+  -webkit-font-smoothing: antialiased;
+  transition: color 0.3s;
+}
+
+a { color: inherit; text-underline-offset: 2px; }
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 16px clamp(12px, 3vw, 32px) 32px;
+}
+
+/* ---------- Light / dark switch ---------- */
+.topbar { display: flex; justify-content: flex-end; }
+
+.theme-switch {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--switch-border);
+  border-radius: 999px;
+}
+
+.theme-switch button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 4px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.theme-switch button[aria-pressed="true"] {
+  background: var(--switch-on-bg);
+  color: var(--switch-on-text);
+}
+
+.theme-switch svg { width: 16px; height: 16px; }
+
+/* ---------- Title block ---------- */
+.intro { text-align: center; }
+
+.intro h1 {
+  display: inline-block;
+  margin: 4px 0 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--rule);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3.3vw, 2.6rem);
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-shadow: var(--title-shadow);
+}
+
+.subtitle {
+  max-width: 64ch;
+  margin: 14px auto 0;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--text-soft);
+}
+
+.hint {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Chart (scrolls sideways on narrow screens instead of shrinking the labels) ---------- */
+.chart {
+  position: relative;
+  margin-top: 8px;
+  overflow-x: auto;
+}
+
+.chart svg {
+  display: block;
+  width: 100%;
+  min-width: 760px;
+  height: auto;
+  font-family: var(--sans);
+}
+
+.arc {
+  stroke: #ffffff;
+  stroke-width: 1.4px;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.arc.is-leaf { cursor: default; }
+.arc.is-dim { opacity: 0.25; }
+.arc:focus { outline: none; }
+.arc:focus-visible { stroke: var(--focus); stroke-width: 4px; }
+
+/* Text inside slices: fill (black or white) and halo (slice colour) are set in main.js per slice */
+.lbl-inner, .lbl-mid, .lbl-centre {
+  paint-order: stroke;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.lbl-mid { font-weight: 500; }
+
+.lbl-hint { font-size: 14px; }
+
+.lbl-outer { fill: var(--text); font-size: 14px; }
+
+.leader { fill: none; stroke: var(--leader); stroke-width: 1px; }
+
+.bracket { fill: none; stroke: var(--bracket); stroke-width: 1.5px; }
+
+.side-item { cursor: pointer; }
+.side-item.is-leaf { cursor: default; }
+.side-item text { fill: var(--text); }
+.side-item .side-sub { fill: var(--text-soft); }
+.side-item:hover text { text-decoration: underline; }
+.side-item:focus { outline: none; }
+.side-item:focus-visible text { text-decoration: underline; fill: var(--focus); }
+
+/* ---------- Tooltip ---------- */
+.tip {
+  position: absolute;
+  z-index: 5;
+  max-width: 280px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--tip-bg);
+  color: var(--tip-text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.tip[hidden] { display: none; }
+.tip strong { display: block; font-weight: 700; }
+.tip b { display: block; margin: 2px 0 4px; font-size: 1.4rem; }
+.tip span { display: block; color: var(--tip-muted); }
+.tip em { display: block; margin-top: 6px; font-style: normal; color: var(--tip-muted); }
+
+.error { padding: 24px; color: var(--text); }
+
+/* ---------- Footer ---------- */
+.notes {
+  margin-top: 6px;
+  text-align: right;
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--text-soft);
+}
+
+.notes p { margin: 0 0 4px; }
+.notes p + p { font-family: var(--sans); font-size: 0.875rem; color: var(--text-muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0s !important; }
+}
